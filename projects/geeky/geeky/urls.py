@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from fee import views
+# from fee import views as fv
+from course.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", views.sample),
+    # path("", fv.sample),
+    path("about/", views.about),
+    path("contact/", views.contact),
+    path("c_h/", course_home),
 ]

@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def course_home(request):
+    s = "This is the course page "
+    return HttpResponse(s)
