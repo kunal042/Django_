@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "course",
-]
+    "fee",
+    "result",
+    ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
