@@ -39,8 +39,57 @@
             {{form.email}}
         </table>
         <input type="button" value="Submit">
+   
+    <hr><hr><hr>
+
+
+    <div>
+        <label for="id_name">Name:</label>
+        <input type="text" name="name" required id="id_name">
+    </div>
+
+    <hr>
+    <div>
+        <label for="{{form.name.id_for_label}}">Name:</label>
+        {{form.name}}
+    </div>
+    <hr>
+    <div>
+        {{form.name.label_tag}}
+        {{form.name}}
+    </div>
     </form>
     
+    <div>
+        <form action="" method="get">
+        {{form.name.label_tag}}
+        {{form.email.label_tag}}
+        {{form.mobile.label_tag}}
+        <input type="button" value="Submit">
+    </form>
+    </div>
+    <hr><hr>
+    <div>
+        <form action="" method="get">
+        {% for field in form.visible_fields %}
+            {{field.label_tag}}
+            {{field}}
+        {% endfor %}
+        <input type="button" value="Submit">
+    </form>
+    </div>
+
+    <h3>For Hideen field ....</h3>
+
+    <div>
+        <form action="" method="get">
+        {% for Hidden in form.hidden_fields %}
+            
+            {{Hidden}}
+        {% endfor %}
+        <input type="button" value="Submit">
+    </form>
+    </div>
     
 </body>
 </html>
