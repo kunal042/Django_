@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from .form import SignUpForm
+from .form import SignUpForm, EditAdminProfileForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm, SetPasswordForm, UserChangeForm
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
