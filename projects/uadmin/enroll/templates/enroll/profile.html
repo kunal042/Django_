@@ -7,6 +7,12 @@
 </head>
 <body>
     <h2>Welcome {{name}} </h2>
+    {%  if users != None %}
+    <h3>List of Users </h3>
+        {% for user in users %}
+            <a href="{% url 'userdetail'  user.id %}">{{user.username}}</a> <br><br>
+        {% endfor %}
+    {% endif %}
 
     <form action="" method="post" novalidate>
 
