@@ -3,12 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Data</title>
+    <style>
+        table,tr, th, td{
+            border: 1px soild black;
+        }
+    </style>
 </head>
 <body>
-    <h1>
-        
-        this is home page
-    </h1>
+
+    {% if stud %}
+    <table>
+        <h3>Student Informations </h3>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Roll</th>
+            <th>City</th>
+            <th>Marks</th>
+            <th>Pass Date</th>
+        </tr>
+
+    {% for st in stud %}
+        <tr>
+            <td>{{st.id}}</td> 
+            <td> {{st.name}}</td>
+            <td>{{st.roll}}</td>  
+            <td>{{st.city}}</td> 
+            <td>{{st.marks}}</td>  
+            <td>{{st.pass_date}}</td> 
+
+        </tr>
+       
+    {% endfor %}
+
+    </table>
+    {% else %}
+    <h3>No Data</h3>
+    {% endif %}
+    
 </body>
 </html>
