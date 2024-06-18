@@ -4,7 +4,7 @@ from django.db.models import Q
 
 # Create your views here.
 
-def student(request):
+# def student(request):
 
     # student_data = Student.objects.all()
 
@@ -68,10 +68,79 @@ def student(request):
 
     ### -----------OR Operator--------
     # student_data = Student.objects.filter(id=2) | Student.objects.filter(roll=4) 
-    student_data = Student.objects.filter(Q(id=3) | Q(roll=4)) 
+    # student_data = Student.objects.filter(Q(id=3) | Q(roll=4)) 
 
-    print('Return :', student_data)
+
+
+    ## Lookup in django
+
+
+    # student_data = Student.objects.last()
+    # student_data = Student.objects.latest("pass_date")
+    # student_data = Student.objects.earliest("pass_date")
+
+
+    # student_data = Student.objects.all()
+    # # print(student_data.exists())
+
+
+    # one_data = Student.objects.get(pk=2)
+    # print(student_data.filter(pk=one_data.pk).exists())
+
+    # print('Return :', student_data)
+
+    # return render(request, 'enroll/student.html', {'st' : student_data})
+
+
+
+# Methods that do not return new query sets.
+
+def student(request):
+    # student_data = Student.objects.create(name="Kunal", roll=6, city="Muz", marks=60, pass_date="2020-5-3" )
+
+
+    # student_data, create = Student.objects.get_or_create(name="Sameer", 
+    #     roll=7, city="Muz", marks=60, pass_date="2020-5-3" )
+    
+
+    # student_data = Student.objects.filter(pk=2).update(name="Kabir", marks=80)
+
+    # student_data = Student.objects.update_or_create(id=5, name='Kunal', defaults={'name': 'Kohli'})
+
+    # objs = [
+    #     Student(id=9, name="spana", roll=9, city="puna", marks=90, pass_date='2022-9-23'),
+    #     Student(id=10, name="neha", roll=10, city="goa",marks=50, pass_date='2022-9-2'),
+
+    # ]
+
+    # student_data = Student.objects.bulk_create(objs)
+
+    
+
+    # all_student_data = Student.objects.all()
+    # for stu in all_student_data:
+    #     stu.city = "Delhi"
+        
+    # student_data = Student.objects.bulk_update(all_student_data, ['city'])
+
+
+
+    # student_data  = Student.objects.in_bulk([1,2])
+    # print(student_data)
+    # print(student_data[1].name)
+    # print(student_data[2].name)
+
+
+
+    # student_data = Student.objects.get(pk=4)
+    # print(student_data.delete())
+
+    
+    student_data = Student.objects.all()
+    print(student_data.count())
+
+    # print('Return :', student_data)
     print()
-    print('SQL Query Set :', student_data.query)
 
-    return render(request, 'enroll/student.html', {'stud' : student_data})
+ 
+    return render(request, 'enroll/student.html', {'st' : student_data})

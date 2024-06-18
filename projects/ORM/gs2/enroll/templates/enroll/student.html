@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    {% if stud %}
+    {% if st %}
     <table>
         <h3>Student Informations </h3>
         <tr>
@@ -24,7 +24,7 @@
             <th>Pass Date</th>
         </tr>
 
-    {% for st in stud %}
+  
         <tr>
             <td>{{st.id}}</td> 
             <td> {{st.name}}</td>
@@ -35,12 +35,14 @@
 
         </tr>
        
-    {% endfor %}
+
 
     </table>
     {% else %}
     <h3>No Data</h3>
     {% endif %}
+
+    
     
 </body>
 </html>
