@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div
+        class="table-responsive"
+    >
+        <table
+            class="table table-primary"
+        >
+        <h3>Student Information</h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">city</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for student in students %}
+                <tr class="">
+                    <td scope="row">{{student.id}}</td>
+                    <td scope="row">{{student.cname}}</td>
+                    <td scope="row">{{student.city}}</td>
+                    <td scope="row">{{student.name}}</td>
+                    <td scope="row">{{student.roll}}</td>
+                    
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+
+
+
+        <table
+            class="table table-primary"
+        >
+        <h3>Exam Center Information</h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">city</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for center in centers %}
+                <tr class="">
+                    <td scope="row">{{center.id}}</td>
+                    <td scope="row">{{center.cname}}</td>
+                    <td scope="row">{{center.city}}</td>
+                    
+                </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+    </div>
+    
+    
+</body>
+</html>
