@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div
+        class="table-responsive">
+        <table
+            class="table table-primary"
+
+        >
+        <h3>Student Information</h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID </th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">fees</th>
+                </tr>
+            </thead>
+            {% for s in st %}
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{s.id}}</td>
+                    <td scope="row">{{s.name}}</td>
+                    <td scope="row">{{s.age}}</td>
+                    <td scope="row">{{s.fees}}</td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+        <table
+            class="table table-primary"
+
+        >
+        <h3>Teacher Information</h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID </th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            {% for t in tr %}
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{t.id}}</td>
+                    <td scope="row">{{t.name}}</td>
+                    <td scope="row">{{t.age}}</td>
+                    <td scope="row">{{t.date}}</td>
+                    <td scope="row">{{t.salary}}</td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+
+
+        <table
+            class="table table-primary"
+
+        >
+        <h3>Contarctor Information</h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID </th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Salary</th>
+                </tr>
+            </thead>
+            {% for c in ct %}
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{c.id}}</td>
+                    <td scope="row">{{c.name}}</td>
+                    <td scope="row">{{c.age}}</td>
+                    <td scope="row">{{c.date}}</td>
+                    <td scope="row">{{c.salary}}</td>
+                    
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    
+    
+</body>
+</html>

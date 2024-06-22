@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Student
 from datetime import date, time
+from django.db.models import Avg, Sum,  Min, Max, Count
 
 # Create your views here.
 
@@ -34,6 +35,7 @@ def home(request):
     # student_data = Student.objects.filter(passdate__week=2)
     # student_data = Student.objects.filter(passdate__week__gte=2)
 
+
     # student_data = Student.objects.filter(passdate__week__day=2)
     # student_data = Student.objects.filter(passdate__quarter=2)
 
@@ -45,12 +47,34 @@ def home(request):
 
 
     
-    student_data = Student.objects.filter(roll_isnull=False)
+    # student_data = Student.objects.filter(roll_isnull=False)
+
+    # student_data = Student.objects.all()
+    # avegare = student_data.aggregate(Avg('marks'))
+    # total = student_data.aggregate(Sum('marks'))
+    # minimum = student_data.aggregate(Min('marks'))
+    # maximum = student_data.aggregate(Max('marks'))
+    # totalcount = student_data.aggregate(Count('marks'))
+    # print(avegare)
+
+    # context = {"students":student_data, 
+    #            'average':avegare,
+    #            'total':total,
+    #            'minimum' : minimum,
+    #            'maximum' : maximum,
+    #            'totalcount':totalcount
 
 
+    #            }
 
+
+    student_data = Student.objects.all()[:2]
+
+    context = {
+        'student' : student_data
+    }
 
     print("Return", student_data)
     print("")
     print("SQL  Query :" , student_data.query )
-    return render(request, 'api/home.html', {"students":student_data})
+    return render(request, 'api/home.html',context )
