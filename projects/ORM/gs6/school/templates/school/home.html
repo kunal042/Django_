@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div
+        class="table-responsive"
+    >
+        <table
+            class="table table-primary"
+        >
+        <h3> Exam Center Information -- Orignal </h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            {% for exam in exams %}
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{exam.id}}</td>
+                    <td scope="row">{{exam.cname}}</td>
+                    <td scope="row">{{exam.city}}</td>
+
+                </tr>
+                
+            </tbody>
+            {% endfor %}
+        </table>
+
+
+        <table
+            class="table table-primary"
+        >
+        <h3> Exam Center Information -- Proxy </h3>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">School Name</th>
+                    <th scope="col">City</th>
+                </tr>
+            </thead>
+            {% for myexam in myexams %}
+            <tbody>
+                <tr class="">
+                    <td scope="row">{{myexam.id}}</td>
+                    <td scope="row">{{myexam.cname}}</td>
+                    <td scope="row">{{myexam.city}}</td>
+
+                </tr>
+                
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+    
+
+
+</body>
+</html>
