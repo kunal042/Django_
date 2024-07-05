@@ -6,18 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h2>Student Detail</h2>
     {% for student in student_list  %}
+
+        
+        <li> <a href="{% url 'detail' student.id %}">{{student.name}}</a> </li>
     
-        <h3> {{student.name}} </h3>
-        <h3> {{student.roll}} </h3>
-        <h3> {{student.course}} </h3>
+        {% comment %} <li><a href="{% url 'detail' student.id %}">{{student.name}} </a></li> {% endcomment %}
+       
     
     {% endfor %}
-
+{% comment %} 
     {% for student in freshers %}
         <h3> {{student.name}} </h3>
         <h3> {{student.roll}} </h3>
         <h3> {{student.course}} </h3>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 </body>
 </html>
